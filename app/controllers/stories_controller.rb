@@ -4,9 +4,14 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = project.stories.create!(params[:story])
+    @story = project.stories.build(params[:story])
+    @story.save!
+
     flash[:notice] = "The story has been created."
     redirect_to(project_path(project))
+  rescue ActiveRecord::RecordInvalid
+    flash[:notice] = "The story had errors."
+    render :action => 'new'
   end
 
   protected

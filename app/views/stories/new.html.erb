@@ -1,4 +1,5 @@
 <% form_for @story, :url => project_stories_path(project) do |f| -%>
+<%= f.error_messages %>
 <div>
   <%= f.label :title %>
   <%= f.text_field :title %>

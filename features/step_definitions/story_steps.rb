@@ -10,20 +10,8 @@ Then /^it's body is "(.*)"$/ do |body|
   @story.body.should == body
 end
 
-Then /^I see a notice saying "The story has been created\."$/ do
-  pending
-end
-
-When /^I fill in title with ""$/ do
-  pending
-end
-
-When /^I fill in body with ""$/ do
-  pending
-end
-
 Then /^a new story is not created$/ do
-  pending
+  Story.count.should == 0
 end
 
 Then /^it has errors on the title$/ do
