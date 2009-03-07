@@ -14,15 +14,10 @@ Then /^a new story is not created$/ do
   Story.count.should == 0
 end
 
-Then /^it has errors on the title$/ do
-  pending
+Then /^I should see the story form$/ do
+  response.should have_tag("form[action=?]", project_stories_path(@project)) do
+    with_tag("input[name=?]", "story[title]")
+    with_tag("textarea[name=?]", "story[body]")
+    with_tag("input[type=?][value=?]", 'submit', "Create")
+  end
 end
-
-Then /^it has errors on the body$/ do
-  pending
-end
-
-Then /^I am viewing the story$/ do
-  pending
-end
-

@@ -16,6 +16,7 @@ Story: [1] Developer creates a story.
       And it's body is "As a developer I want to create stories."
       And I am viewing the project page
       And I should see "The story has been created."
+      And I should see "Developer creates a story"
 
   Scenario: empty story
     Given a project
@@ -28,3 +29,4 @@ Story: [1] Developer creates a story.
       And I should see "Title can't be blank"
       And I should see "Body can't be blank"
       And I should see "The story had errors."
+      And I should see the story form
