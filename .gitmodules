@@ -1,0 +1,21 @@
+[submodule "vendor/rails"]
+	path = vendor/rails
+	url = ssh://repos.semanticgap.com//repos/oss/git/mirrors/rails.git
+[submodule "vendor/plugins/rspec"]
+	path = vendor/plugins/rspec
+	url = ssh://repos.semanticgap.com//repos/oss/git/mirrors/rspec.git
+[submodule "vendor/plugins/rspec-rails"]
+	path = vendor/plugins/rspec-rails
+	url = ssh://repos.semanticgap.com//repos/oss/git/mirrors/rspec-rails.git
+[submodule "vendor/plugins/restful_authentication"]
+	path = vendor/plugins/restful_authentication
+	url = ssh://repos.semanticgap.com//repos/oss/git/mirrors/restful_authentication.git
+[submodule "vendor/plugins/cucumber"]
+	path = vendor/plugins/cucumber
+	url = git://github.com/aslakhellesoy/cucumber.git
+[submodule "vendor/plugins/webrat"]
+	path = vendor/plugins/webrat
+	url = git://github.com/brynary/webrat.git
+[submodule "vendor/plugins/rspec_hpricot_matchers"]
+	path = vendor/plugins/rspec_hpricot_matchers
+	url = git://github.com/pd/rspec_hpricot_matchers.git
