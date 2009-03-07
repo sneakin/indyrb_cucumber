@@ -1,3 +1,11 @@
+Given /^a story$/ do
+  @story = Story.create(:title => 'Bad Story', :body => 'As a developer I will do something stupid.', :project_id => @project.id)
+end
+
+When /^I follow the delete story link$/ do
+  When "I follow \"delete_story_#{@story.id}\""
+end
+
 Then /^a new story is created$/ do
   @story = Story.find(:last)
 end

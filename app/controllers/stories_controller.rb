@@ -14,6 +14,12 @@ class StoriesController < ApplicationController
     render :action => 'new'
   end
 
+  def destroy
+    project.stories.destroy(params[:id])
+    flash[:notice] = "The story has been deleted."
+    redirect_to(project_path(project))
+  end
+
   protected
 
   helper_method :project

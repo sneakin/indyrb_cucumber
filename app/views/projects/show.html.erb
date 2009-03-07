@@ -5,6 +5,7 @@
   <% @project.stories.each do |story| -%>
   <li>
     <%= link_to h(story.title), project_story_path(@project, story) %>
+    <%= link_to 'Delete', project_story_path(@project, story), :method => 'delete', :id => "delete_story_#{story.id}", :confirm => "Are you sure?" %>
   </li>
   <% end -%>
 </ul>
