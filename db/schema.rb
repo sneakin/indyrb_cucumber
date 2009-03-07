@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20090307003342) do
   create_table "stories", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "story_id"
+    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

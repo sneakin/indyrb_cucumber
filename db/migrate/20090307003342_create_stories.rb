@@ -3,7 +3,7 @@ class CreateStories < ActiveRecord::Migration
     create_table :stories do |t|
       t.string :title
       t.text :body
-      t.integer :story_id
+      t.integer :project_id
 
       t.timestamps
     end
