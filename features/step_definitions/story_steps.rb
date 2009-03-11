@@ -3,7 +3,24 @@ Given /^a story$/ do
 end
 
 When /^I follow the delete story link$/ do
-  When "I follow \"delete_story_#{@story.id}\""
+  # When "I follow \"delete_story_#{@story.id}\""
+  When "I follow \"Delete\""
+end
+
+When /^I want to cancel the confirmation$/ do
+  selenium.choose_cancel_on_next_confirmation
+end
+
+When /^I want to confirm$/ do
+  selenium.choose_ok_on_next_confirmation
+end
+
+When /^I confirm$/ do
+  selenium.confirmation.should be_true
+end
+
+Then /^I should see a confirmation saying \"(.*)\"$/ do |msg|
+  selenium.confirmation.should == msg
 end
 
 Then /^a new story is created$/ do
@@ -28,4 +45,8 @@ Then /^I should see the story form$/ do
     with_tag("textarea[name=?]", "story[body]")
     with_tag("input[type=?][value=?]", 'submit', "Create")
   end
+end
+
+Then /^the story still exists$/ do
+  Story.find_by_id(@story.id).should_not be_nil
 end
