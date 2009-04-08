@@ -1,0 +1,72 @@
+Getting started
+
+* Start a project
+* Add plugin and/or install gem: [3520b57cf]
+  * `git submodule add git://github.com/aslakhellesoy/cucumber.git vendor/plugins/cucumber`
+  * `gem install cucumber`
+  * Commit: 
+* Generate Cucumber files
+  * `./script/generate cucumber` [539a206a8f]
+* Try it out
+  * `rake features`
+
+First story: [d70bb3f672f]
+
+* Basic cucumber
+* Will fill out a form that creates a record.
+* Format
+  * Header (boiler plate)
+    * Title
+    * Description
+  * Scenarios
+    * First scenario: happy ending [68881572]
+      * Steps
+      * Given/When/Then don't matter in step_definitions
+    * Second scenario: not so happy [b072634954e]
+    * Third?
+      * Not needed here.
+      * Stay DRY. Move to rspec for individual conditions such as trying each field for validity.
+
+Second story:
+
+* The story [2bf12bad1d7]
+  * Deleting a story with Ajax  [2bf12bad1d]
+    * Alert box
+    * Dynamic page update
+* Notes
+  * Cucumber ignores confirmation messages
+  * It follows the link's method, even though it's javascript
+
+Selenium: [87771e9207]
+
+* Is needed to test Javascript such as
+  * Alert box
+  * Ajax & Dynamic page updates
+* Setup [http://wiki.github.com/aslakhellesoy/cucumber/setting-up-selenium]
+  * Install Selenium gem: http://selenium-rc.openqa.org
+  * Copy selenium server over Webrat's version
+  * Create directories to hold regular and Selenium features:
+  * Create a cucumber.yml in RAILS_ROOT
+  * Edit features/support/env.rb and create plain.rb and selenium.rb
+  * Create a Rake task to run `cucumber -p selenium`
+  * Copy story #2
+* Things to note:
+  * Same steps: redefines the common steps, makes it easy
+  * JS related steps
+  * Digging into Selenium commands: selenium-client's code: idiomatic.rb & generated_driver.rb
+  * Will probably need to hack webrat to interface.
+
+Third story?
+
+* Prioritizing stories w/ drag and drop
+
+Other cool stuff
+
+* RCov [e8cb9350dca]
+* Factory Girl / Machinist
+
+Resources
+
+* Cucumber site [http://wiki.github.com/aslakhellesoy/cucumber/]
+* Selenium [http://www.seleniumhq.org/]
+* Cucumber & Selenium [http://wiki.github.com/aslakhellesoy/cucumber/setting-up-selenium]
